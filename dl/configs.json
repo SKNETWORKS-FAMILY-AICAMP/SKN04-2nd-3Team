@@ -1,5 +1,5 @@
 {
-    "nni": false,
+    "nni": true,
     "output_dim": 1,
     "seed": 0,
     "batch_size": 1024,       

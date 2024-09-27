@@ -119,10 +119,11 @@ if __name__ == '__main__':
 
     if configs.get('nni'):
         nni_params = nni.get_next_parameter()
-        configs.update({'batch_size': nni_params.get('batch_size')})
-        configs.update({'hidden_dim': nni_params.get('hidden_dim')})
-        configs.update({'learning_rate': nni_params.get('learning_rate')})
-        configs.update({'dropout_ratio': nni_params.get('dropout_ratio')})
+        configs.update(nni_params)
+        # configs.update({'batch_size': nni_params.get('batch_size')})
+        # configs.update({'hidden_dim': nni_params.get('hidden_dim')})
+        # configs.update({'learning_rate': nni_params.get('learning_rate')})
+        # configs.update({'dropout_ratio': nni_params.get('dropout_ratio')})
 
     # CUDA 설정
     if device == 'gpu':

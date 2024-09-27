@@ -17,7 +17,7 @@ trial_command: python train.py
 trial_code_directory: .
 
 trial_concurrency: 2
-# max_trial_number: 120
+max_trial_number: 120
 
 tuner:
   name: TPE
