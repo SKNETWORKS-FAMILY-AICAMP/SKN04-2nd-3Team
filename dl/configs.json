@@ -1,0 +1,11 @@
+{
+    "nni": false,
+    "output_dim": 1,
+    "seed": 0,
+    "batch_size": 1024,       
+    "epochs": 100,
+    "learning_rate": 4e-3,    
+    "hidden_dim": 128,
+    "dropout_ratio": 0.3,
+    "use_batch_norm": true
+}
