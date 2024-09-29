@@ -5,6 +5,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import lightning as L
+import torch
+
 
 
 class LeaveModule(L.LightningModule):
@@ -27,8 +29,10 @@ class LeaveModule(L.LightningModule):
         y = batch.get('y')  # 레이블 데이터를 가져옴
 
         output = self.model(X)  # 모델을 통해 예측값을 계산
-        self.loss = F.cross_entropy(output, y)  # 예측값과 실제 값 간의 손실 계산 (cross_entropy 손실 함수 사용)
-
+        # logit = F.binary_cross_entropy_with_logits(output)
+        self.loss = F.binary_cross_entropy_with_logits(output, y)  # 예측값과 실제 값 간의 손실 계산 (cross_entropy 손실 함수 사용)
+        # y_pred = output.argmax(axis=-1)
+        # self.acc = (y_pred == y).float().mean()        
         return self.loss  # 계산된 손실 반환
     
     def on_train_epoch_end(self, *args, **kwargs):
@@ -39,6 +43,7 @@ class LeaveModule(L.LightningModule):
             prog_bar=True,  # 진행 막대에 표시
             logger=True,    # 로그에 기록
         )
+
     
     def validation_step(self, batch, batch_idx):
         if batch_idx == 0:
@@ -49,8 +54,13 @@ class LeaveModule(L.LightningModule):
         y = batch.get('y')  # 레이블 데이터를 가져옴
 
         output = self.model(X)  # 모델을 통해 예측값을 계산
-        self.val_loss = F.cross_entropy(output, y)  # 예측값과 실제 값 간의 검증 손실 계산 (cross_entropy 손실 함수 사용)
+        # output = F.sigmoid(output)
+        self.val_loss = F.binary_cross_entropy_with_logits(output, y)  # 예측값과 실제 값 간의 검증 손실 계산 (cross_entropy 손실 함수 사용)
+        # y_pred = output.argmax(axis=-1)
+        # self.val_acc = (y_pred == y).float().mean()
         self.val_losses.append(self.val_loss.detach().item())
+
+        # self.val_losses.append(self.val_loss.detach().item())
 
         return self.val_loss  # 검증 손실 반환
     
@@ -70,6 +80,7 @@ class LeaveModule(L.LightningModule):
 
     def test_step(self, batch, batch_idx):
         if batch_idx == 0:
+            # self.test_losses.clear()
             self.test_losses.clear()
 
         # 테스트 단계에서 호출되는 메서드
@@ -77,12 +88,14 @@ class LeaveModule(L.LightningModule):
         y = batch.get('y')  # 레이블 데이터를 가져옴
 
         output = self.model(X)  # 모델을 통해 예측값을 계산
-        
-        test_loss = F.cross_entropy(output, y)
+        test_loss = F.binary_cross_entropy_with_logits(output, y)
         self.test_losses.append(test_loss.detach().item())
+        # y_pred = output.argmax(axis=-1)
+        # self.test_acc = (y_pred == y).float().mean()
+        # self.test_losses.append(test_loss.detach().item())
 
         return output  # 예측된 레이블 반환
-
+    
     def on_test_epoch_end(self):
         if self.configs.get('nni'):
             nni.report_final_result(np.mean(self.test_losses))

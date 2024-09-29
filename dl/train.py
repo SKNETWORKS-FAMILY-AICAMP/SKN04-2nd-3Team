@@ -26,32 +26,42 @@ import pandas as pd
 def main(configs):
     # 'train' 데이터셋을 로드
     train = pd.read_csv('./data/train.csv')
-    test = pd.read_csv('./data/test.csv')
+    # test = pd.read_csv('./data/test.csv')
 
     # 결측값이 있는 모든 행 제거
     train = train.dropna()
-
+    train = train.drop(columns=['CustomerID'])
+    # test = test.drop(columns=['CustomerID'])
+    # train['Churn'] = np.where(train['Churn'] == "Yes", 1, 0)
+    
     # 범주형 열을 정수형으로 변환
-    train, _ = convert_category_into_integer(train, ('Churn', 'ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel',  'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam', 'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus'))
-    test, _ = convert_category_into_integer(test, ('Churn', 'ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel',  'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam', 'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus'))
+    categorical_columns = ['Churn','ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel', 'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam',  'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus']
+
+    # train, _ = convert_category_into_integer(train, ( 'Churn','ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel',  'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam', 'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus'))
+    train, _ = convert_category_into_integer(train, categorical_columns)
+    # test, _ = convert_category_into_integer(test, ( 'ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel',  'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam', 'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus'))
 
     # 데이터프레임을 float32로 변환
     train = train.astype(np.float32)
-    test = test.astype(np.float32)
+    # test = test.astype(np.float32)
 
     # 데이터셋을 학습용과 임시 데이터로 분할
-    train, valid = train_test_split(train, test_size=0.4, random_state=seed)
+    train, temp = train_test_split(train, test_size=0.4, random_state=seed)
+    valid, test = train_test_split(temp, test_size=0.5, random_state=seed)
 
-    categorical_columns = ['Churn', 'ServiceArea', 'ChildrenInHH', 'HandsetRefurbished', 'HandsetWebCapable', 'TruckOwner', 'RVOwner', 'Homeownership', 'BuysViaMailOrder', 'RespondsToMailOffers', 'OptOutMailings', 'NonUSTravel', 'OwnsComputer', 'HasCreditCard', 'NewCellphoneUser', 'NotNewCellphoneUser', 'OwnsMotorcycle', 'HandsetPrice', 'MadeCallToRetentionTeam',  'CreditRating', 'PrizmCode', 'Occupation', 'MaritalStatus']
     
     standard_scaler = StandardScaler()
+    numeric_columns = ['ActiveSubs', 'AdjustmentsToCreditRating', 'AgeHH1', 'AgeHH2','BlockedCalls', 'CallForwardingCalls', 'CallWaitingCalls','CurrentEquipmentDays', 'CustomerCareCalls', 'DirectorAssistedCalls','DroppedBlockedCalls', 'DroppedCalls', 'HandsetModels', 'Handsets','InboundCalls', 'IncomeGroup', 'MonthlyMinutes', 'MonthlyRevenue','MonthsInService', 'OffPeakCallsInOut', 'OutboundCalls','OverageMinutes', 'PeakCallsInOut', 'PercChangeMinutes','PercChangeRevenues', 'ReceivedCalls', 'ReferralsMadeBySubscriber','RetentionCalls', 'RetentionOffersAccepted', 'RoamingCalls','ThreewayCalls', 'TotalRecurringCharge', 'UnansweredCalls','UniqueSubs']
+    # numeric_columns = [col for col in categorical_columns if train[col].dtype != 'object']
+    # numeric_columns = train.columns.diffrence(categorical_columns)
+    # numeric = list(train.columns.difference(categorical_columns))
+    # train[numeric_columns] = standard_scaler.fit_transform(train[numeric_columns])
+    # valid[numeric_columns] = standard_scaler.transform(valid[numeric_columns])
+    # test[numeric_columns] = standard_scaler.transform(test[numeric_columns])
 
-    numeric_columns = [col for col in categorical_columns if train[col].dtype != 'object']
-
-    train[numeric_columns] = standard_scaler.fit_transform(train[numeric_columns])
-    valid[numeric_columns] = standard_scaler.transform(valid[numeric_columns])
-    test[numeric_columns] = standard_scaler.transform(test[numeric_columns])
-
+    train.loc[:, numeric_columns] = standard_scaler.fit_transform(train.loc[:,numeric_columns])
+    valid.loc[:, numeric_columns] = standard_scaler.transform(valid.loc[:,numeric_columns])
+    test.loc[:, numeric_columns] = standard_scaler.transform(test.loc[:,numeric_columns])
 
     # 데이터셋 객체로 변환
     train_dataset = LeaveDataset(train)
@@ -71,7 +81,7 @@ def main(configs):
         model=model,
         configs=configs,
     )
-
+    
     # Trainer 인스턴스 생성 및 설정
     del configs['output_dim'], configs['seed']
     exp_name = ','.join([f'{key}={value}' for key, value in configs.items()])
@@ -101,6 +111,8 @@ def main(configs):
         datamodule=leave_data_module,
     )
 
+    # trainer.save_checkpoint('model_checkpoint.ckpt')
+    torch.save(leave_module.state_dict(), 'model_weights.pth')
 
 if __name__ == '__main__':
     # 사용 가능한 GPU가 있는 경우 'cuda', 그렇지 않으면 'cpu' 사용
