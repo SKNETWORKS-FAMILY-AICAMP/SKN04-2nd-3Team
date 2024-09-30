@@ -7,7 +7,7 @@
 
 ## 1. 팀 소개
 ### 팀명 : 제발 가지마세요
- 
+
 ### 팀원
 
 
@@ -22,7 +22,7 @@
 <hr>
 
 ## 2. 프로젝트 개요 
-### 개발 기간 
+### 개발 기간
 2024-09-27 ~ 2024-09-30
 ### 프로젝트 명 
 바짓가랑이 붙잡기 
@@ -85,32 +85,37 @@ python main.py
 
 ### EDA
 <hr>
-칼럼별 히트맵<br>
-<img src="https://github.com/user-attachments/assets/f8c69a56-5164-4c40-aadb-51c8e0d77984" width="400" height="400"/>
+특성별 히트맵 : 각 특성별 상관관계 비율에 대한 히트맵<br>
+<img src="https://github.com/user-attachments/assets/f8c69a56-5164-4c40-aadb-51c8e0d77984" width="500" height="500"/>
 <br>
-중요자료 히트맵<br>
-<img src="https://github.com/user-attachments/assets/8bfd8060-22e7-49f6-98bd-2e754fc1a9b8" width="400" height="400"/>
+중요자료 히트맵 : 고객이탈 상관관계가 높은 자료에 대한 히트맵<br>
+<img src="https://github.com/user-attachments/assets/8bfd8060-22e7-49f6-98bd-2e754fc1a9b8" width="500" height="500"/>
+<br>
+월간 수익구간별 이탈률 : 고객의 수익구간별 고객이탈에 대한 비율에 대한 차트<br>
+<img src="https://github.com/user-attachments/assets/2d01c09c-abb0-46e5-9f2e-7734a3fa0990" width="500" height="500"/>
 <br>
 가입 기간별 고객 이탈 상관분석<br>
-<img src="https://github.com/user-attachments/assets/850a8050-57d2-4f5f-8834-8d7b9071000f" width="400" height="400"/>
+<img src="https://github.com/user-attachments/assets/850a8050-57d2-4f5f-8834-8d7b9071000f" width="500" height="500"/>
 <br>
 고객 서비스 통화 횟수별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/f75f4de8-ff5d-47a7-a673-91ca23e1cd4b" width="400" height="400"/>
+<img src="https://github.com/user-attachments/assets/f75f4de8-ff5d-47a7-a673-91ca23e1cd4b" width="500" height="500"/>
 <br>
 드랍콜 횟수별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/257031dd-85f8-47cf-86a6-9bbf96859c04" width="400" height="400"/>
+<img src="https://github.com/user-attachments/assets/257031dd-85f8-47cf-86a6-9bbf96859c04" width="500" height="500"/>
 <br>
 초과사용시간별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/2ddc0aba-f3ac-47e5-9e11-9c271ccdfd8f" width="400" height="400"/>
-<br>
-월간 수익구간별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/2d01c09c-abb0-46e5-9f2e-7734a3fa0990" width="400" height="400"/>
+<img src="https://github.com/user-attachments/assets/2ddc0aba-f3ac-47e5-9e11-9c271ccdfd8f" width="500" height="500"/>
+
 
 <hr>
 
 ### Modeling
 
-***modling 과정에 대한 내용 작성 (cv, tuning 포함)***
+ML : 분석결과 상관관계가 있는 특성들이 없기때문에 차원축소를 통해 특성 수를 줄이고 클러스터링을 통해 군집을 확인해봤지만 차원축소로는 해결하기 힘들다고 판단하게됨. 다음 시도로 svm의 비선형 커널(poly,rbf)를 이용하여 모델을 만들었고 결과가 이전 모델보다 향상되어 채택하게 됨.
+결과적으로 CustomerCareCalls, MonthsInService, DroppedCalls, OverageMinutes 네개의 특성이 이탈률과 연관이 있다고 판단됨.
+
+DL
+
 
 <hr>
 
