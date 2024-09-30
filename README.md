@@ -13,10 +13,10 @@
 
 <div align="center">
 	
-|   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  김문수  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  이지수  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  김태욱  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  안준용  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   |
-|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
-|   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  팀장/ EDA  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  EDA/ML  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  EDA/DL  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  EDA/git/readme  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   |
-
+| 김문수 | 이지수 | 김태욱 | 안준용 |
+|--|--|--|--|--|
+| ![image](https://github.com/user-attachments/assets/dc6bcf90-3d13-42b0-a786-715c439ce82c) | ![image](https://github.com/user-attachments/assets/bfcd973c-f5a2-4387-8ff6-44871b3ee15e) | ![image](https://github.com/user-attachments/assets/ba21b09c-b2b6-4842-920d-fd4853b61672) | ![image](https://github.com/user-attachments/assets/94af9ec2-a7ca-4fd3-b496-86ad8b23be5a) |
+| Project Leader/eda | ML | DL | readme/git |
 </div>
 
 <hr>
