@@ -28,5 +28,3 @@ def convert_category_into_integer(df: pd.DataFrame, columns: list):
     
     # 변환된 데이터프레임과 LabelEncoder 객체를 포함하는 딕셔너리를 반환합니다.
     return df, label_encoders
-
-

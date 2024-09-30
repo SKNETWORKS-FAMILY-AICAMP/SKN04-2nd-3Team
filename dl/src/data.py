@@ -73,7 +73,3 @@ class LeaveDataModule(L.LightningDataModule):
             batch_size=self.batch_size,  # 배치 크기 설정
             shuffle=False,  # 데이터셋을 섞지 않음
         )
-
-
-
-

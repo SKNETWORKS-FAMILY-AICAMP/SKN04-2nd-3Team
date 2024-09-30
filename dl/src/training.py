@@ -7,7 +7,6 @@ import torch.nn.functional as F
 import torch.optim as optim
 import lightning as L
 
-
 class LeaveModule(L.LightningModule):
     def __init__(
         self,

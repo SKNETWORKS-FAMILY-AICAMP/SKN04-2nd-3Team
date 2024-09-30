@@ -23,7 +23,7 @@ from lightning.pytorch.loggers import TensorBoardLogger
 
 def main(configs):
     # 'train.csv' 데이터를 불러옴
-    train = pd.read_csv('./data/train.csv')
+    train = pd.read_csv('../data/train.csv')
 
     # 결측값이 있는 행 제거
     train = train.dropna()

@@ -12,7 +12,6 @@ search_space:
     _type: uniform
     _value: [0.1, 0.5]
 
-
 trial_command: python train.py
 trial_code_directory: .
 
