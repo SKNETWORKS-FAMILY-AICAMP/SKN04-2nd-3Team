@@ -1,0 +1,30 @@
+search_space:
+  batch_size:
+    _type: choice
+    _value: [16, 32, 64, 128]
+  hidden_dim:
+    _type: randint
+    _value: [32, 1024]
+  learning_rate:
+    _type: uniform
+    _value: [0.001, 0.2]
+  dropout_ratio:
+    _type: uniform
+    _value: [0.1, 0.5]
+
+
+trial_command: python train.py
+trial_code_directory: .
+
+trial_concurrency: 2
+# max_trial_number: 120
+
+tuner:
+  name: TPE
+  class_args:
+    optimize_mode: minimize
+
+training_service:
+  platform: local
+
+debug: true
