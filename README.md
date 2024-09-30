@@ -85,25 +85,25 @@ python main.py
 
 ### EDA
 <hr>
-칼럼별 히트맵
+칼럼별 히트맵<br>
 <img src="https://github.com/user-attachments/assets/f8c69a56-5164-4c40-aadb-51c8e0d77984" width="400" height="400"/>
 <br>
-중요자료 히트맵
+중요자료 히트맵<br>
 <img src="https://github.com/user-attachments/assets/8bfd8060-22e7-49f6-98bd-2e754fc1a9b8" width="400" height="400"/>
 <br>
-가입 기간별 고객 이탈 상관분석
+가입 기간별 고객 이탈 상관분석<br>
 <img src="https://github.com/user-attachments/assets/850a8050-57d2-4f5f-8834-8d7b9071000f" width="400" height="400"/>
 <br>
-고객 서비스 통화 횟수별 이탈률
+고객 서비스 통화 횟수별 이탈률<br>
 <img src="https://github.com/user-attachments/assets/f75f4de8-ff5d-47a7-a673-91ca23e1cd4b" width="400" height="400"/>
 <br>
-드랍콜 횟수별 이탈률
+드랍콜 횟수별 이탈률<br>
 <img src="https://github.com/user-attachments/assets/257031dd-85f8-47cf-86a6-9bbf96859c04" width="400" height="400"/>
 <br>
-초과사용시간별 이탈률
+초과사용시간별 이탈률<br>
 <img src="https://github.com/user-attachments/assets/2ddc0aba-f3ac-47e5-9e11-9c271ccdfd8f" width="400" height="400"/>
 <br>
-월간 수익구간별 이탈률
+월간 수익구간별 이탈률<br>
 <img src="https://github.com/user-attachments/assets/2d01c09c-abb0-46e5-9f2e-7734a3fa0990" width="400" height="400"/>
 
 <hr>
