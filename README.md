@@ -165,7 +165,24 @@ python main.py
 ML : 분석결과 상관관계가 있는 특성들이 없기때문에 차원축소를 통해 특성 수를 줄이고 클러스터링을 통해 군집을 확인해봤지만 차원축소로는 해결하기 힘들다고 판단하게됨. 다음 시도로 svm의 비선형 커널(poly,rbf)를 이용하여 모델을 만들었고 결과가 이전 모델보다 향상되어 채택하게 됨.
 결과적으로 CustomerCareCalls, MonthsInService, DroppedCalls, OverageMinutes 네개의 특성이 이탈률과 연관이 있다고 판단됨.
 
-DL
+DL : 
+#### 가중치 보정 전
+<br>
+<img src="https://github.com/user-attachments/assets/e53a785e-db65-4f81-b2e5-a742cc568179" width="500" height="200"/>
+<br> 
+<br><br>
+
+#### 가중치 보정 후<br>
+<img src="https://github.com/user-attachments/assets/d4b6e927-41a4-4359-a7b8-549b3e332f92" width="500" height="200"/>
+<br> 
+
+<br><br>
+
+#### 가중치 보정 후 + 리니어 4개 <br>
+<img src="https://github.com/user-attachments/assets/ebbd51c1-b21f-4f4e-81bd-bda894b1690a" width="500" height="200"/>
+<br>
+<br> 
+<br>
 
 
 <hr>
