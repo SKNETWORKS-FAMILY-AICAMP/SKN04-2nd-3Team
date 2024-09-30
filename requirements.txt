@@ -1,0 +1,9 @@
+pandas = 2.2.2
+numpy = 1.26.4
+sklean = 1.5.1
+matplotlib = 3.9.2
+seaborn = 0.13.2
+torch = 2.4.1+cpu
+lightning = 2.4.0
+nni = 3.0
+json = 2.0.9
