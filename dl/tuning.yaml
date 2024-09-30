@@ -7,17 +7,16 @@ search_space:
     _value: [32, 1024]
   learning_rate:
     _type: uniform
-    _value: [0.001, 0.2]
+    _value: [0.0001, 0.2]
   dropout_ratio:
     _type: uniform
     _value: [0.1, 0.5]
-
 
 trial_command: python train.py
 trial_code_directory: .
 
 trial_concurrency: 2
-# max_trial_number: 120
+max_trial_number: 120
 
 tuner:
   name: TPE

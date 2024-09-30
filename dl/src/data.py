@@ -2,6 +2,7 @@ import torch
 from torch.utils.data import DataLoader, Dataset
 import lightning as L
 
+
 class LeaveDataset(Dataset):
     def __init__(self, data):  # 생성자 메서드
         super().__init__()  # 부모 클래스의 생성자를 호출하여 초기화
