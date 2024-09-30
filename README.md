@@ -1,7 +1,7 @@
 # SKN04-2nd-3Team
 
 # 제발 가지마세요
-<p align="center"><img src="https://github.com/user-attachments/assets/70e145c2-8248-445b-ad98-af5b065f064b" width="300" height="300"/></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/70e145c2-8248-445b-ad98-af5b065f064b" width="700" height="300"/></p>
 
 <hr>
 
@@ -13,10 +13,41 @@
 
 <div align="center">
 	
-| 김문수 | 이지수 | 김태욱 | 안준용 |
-|--|--|--|--|--|
-| ![image](https://github.com/user-attachments/assets/dc6bcf90-3d13-42b0-a786-715c439ce82c) | ![image](https://github.com/user-attachments/assets/bfcd973c-f5a2-4387-8ff6-44871b3ee15e) | ![image](https://github.com/user-attachments/assets/ba21b09c-b2b6-4842-920d-fd4853b61672) | ![image](https://github.com/user-attachments/assets/94af9ec2-a7ca-4fd3-b496-86ad8b23be5a) |
-| Project Leader/eda | ML | DL | readme/git |
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <th style="width: 25%; text-align: center;">김문수</th>
+        <th style="width: 25%; text-align: center;">이지수</th>
+        <th style="width: 25%; text-align: center;">김태욱</th>
+        <th style="width: 25%; text-align: center;">안준용</th>
+    </tr>
+    <tr>
+        <td style="text-align: center;">Project Leader/eda</td>
+        <td style="text-align: center;">ML</td>
+        <td style="text-align: center;">DL</td>
+        <td style="text-align: center;">readme/git</td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="https://github.com/user-attachments/assets/dc6bcf90-3d13-42b0-a786-715c439ce82c" width="150" height="150" />
+        </td>
+        <td style="text-align: center;">
+            <img src="https://github.com/user-attachments/assets/bfcd973c-f5a2-4387-8ff6-44871b3ee15e" width="150" height="150" />
+        </td>
+        <td style="text-align: center;">
+            <img src="https://github.com/user-attachments/assets/ba21b09c-b2b6-4842-920d-fd4853b61672" width="150" height="150" />
+        </td>
+        <td style="text-align: center;">
+            <img src="https://github.com/user-attachments/assets/22a242fd-bc86-4329-9456-a5ea1ff69df1" width="150" height="150" />
+        </td>
+        <tr>
+        <td style="text-align: center;">가지</td>
+        <td style="text-align: center;">마</td>
+        <td style="text-align: center;">고구마</td>
+        <td style="text-align: center;">벤제마</td>
+    </tr>
+        
+    
+</table>
 </div>
 
 <hr>
@@ -74,38 +105,58 @@ python main.py
 <img src="https://github.com/user-attachments/assets/fd1c1ee5-bb4d-4513-b057-91e802b2eec6" width="300" height="300"/>
 
 데이터셋의 기본 정보
-총 고객 수 : 51,047명 <br>
-이탈 고객 수: 14,711명 (71.2%) <br>
-유지 고객 수: 36,336명 (28.8%) <br>
-결측치 수 : 1,295 <br>
+총 고객 수 : 51,047명 <br><br>
+이탈 고객 수: 14,711명 (71.2%) <br><br>
+유지 고객 수: 36,336명 (28.8%) <br><br>
+결측치 수 : 1,295 <br><br>
 훈련 대상 수 : 49,752 <br>
 
 
 <hr>
 
-### EDA
-<hr>
-특성별 히트맵 : 각 특성별 상관관계 비율에 대한 히트맵<br>
-<img src="https://github.com/user-attachments/assets/f8c69a56-5164-4c40-aadb-51c8e0d77984" width="500" height="500"/>
-<br>
-중요자료 히트맵 : 고객이탈 상관관계가 높은 자료에 대한 히트맵<br>
-<img src="https://github.com/user-attachments/assets/8bfd8060-22e7-49f6-98bd-2e754fc1a9b8" width="500" height="500"/>
-<br>
-월간 수익구간별 이탈률 : 고객의 수익구간별 고객이탈에 대한 비율에 대한 차트<br>
-<img src="https://github.com/user-attachments/assets/2d01c09c-abb0-46e5-9f2e-7734a3fa0990" width="500" height="500"/>
-<br>
-가입 기간별 고객 이탈 상관분석<br>
-<img src="https://github.com/user-attachments/assets/850a8050-57d2-4f5f-8834-8d7b9071000f" width="500" height="500"/>
-<br>
-고객 서비스 통화 횟수별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/f75f4de8-ff5d-47a7-a673-91ca23e1cd4b" width="500" height="500"/>
-<br>
-드랍콜 횟수별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/257031dd-85f8-47cf-86a6-9bbf96859c04" width="500" height="500"/>
-<br>
-초과사용시간별 이탈률<br>
-<img src="https://github.com/user-attachments/assets/2ddc0aba-f3ac-47e5-9e11-9c271ccdfd8f" width="500" height="500"/>
+## EDA
 
+
+#### 특성별 히트맵 : 통신 관련 자료를 각 특성별 상관관계 비율에 대한 히트맵<br>
+<img src="https://github.com/user-attachments/assets/f8c69a56-5164-4c40-aadb-51c8e0d77984" width="500" height="500"/>
+<br> 전체 히트맵의 상관관계는 고객이탈과의 관계가 전체 적으로 높아 보이지 않음
+<br><br>
+
+#### 중요 특성 히트맵 : 고객 이탈 상관관계가 높은 특성에 대한 히트맵<br>
+<img src="https://github.com/user-attachments/assets/8bfd8060-22e7-49f6-98bd-2e754fc1a9b8" width="500" height="500"/>
+<br> 고객 이탈 상관관계가 높은 특성을 가진 히트맵 차트를 그렸지만 각 특성별 상관 관계는 높아 보이지만 고객 이탈 상관관계는 높아 보이지 않음
+
+<br><br>
+
+#### 월간 수익구간별 이탈률 : 고객의 수익구간별 고객이탈에 대한 비율에 대한 차트 <br>
+<img src="https://github.com/user-attachments/assets/2d01c09c-abb0-46e5-9f2e-7734a3fa0990" width="500" height="500"/>
+<br> 전체 수익 구간을 5등 부분으로 나눌때 수익구간이 적을때 근소하게 높은 수치가 보임
+<br> 
+<br>
+
+#### 가입 기간별 고객 이탈 상관분석<br>
+<img src="https://github.com/user-attachments/assets/850a8050-57d2-4f5f-8834-8d7b9071000f" width="500" height="500"/>
+<br> 고객 가입 초기 12개월 안의 고객이탈 비율이 높게 나타남.
+<br>
+<br>
+
+#### 고객 서비스 통화 횟수별 이탈률<br>
+<img src="https://github.com/user-attachments/assets/f75f4de8-ff5d-47a7-a673-91ca23e1cd4b" width="500" height="500"/>
+<br> 서비스 센터 통화 횟수가 3~4 횟수에서 이탈률이 증가함.
+<br>
+<br>
+
+#### Drop Call 횟수별 이탈률<br>
+<img src="https://github.com/user-attachments/assets/257031dd-85f8-47cf-86a6-9bbf96859c04" width="500" height="500"/>
+<br> 통신사 통화 품질불량 횟수가 2 ~ 10 회에서 높게 나타남
+<br>
+<br>
+
+#### 초과사용시간별 이탈률<br>
+<img src="https://github.com/user-attachments/assets/2ddc0aba-f3ac-47e5-9e11-9c271ccdfd8f" width="500" height="500"/>
+<br> 사용 초과 고객에 대하여 높은 상관관계가 보임
+<br>
+<br>
 
 <hr>
 
@@ -125,6 +176,22 @@ DL
 
 <hr>
 
+<hr>
+
+### 주요 인사이트 돌출 및 제안
+
+#### 1. 장기 고객 관리: 서비스 이용 기간이 길어질수록 이탈 가능성이 높아지므로, 장기 고객을 위한 특별 혜택이나 로열티 프로그램을 고려해볼 수 있습니다.
+
+#### 2. 구독 최적화: 고유 구독 수와 활성 구독 수가 많을수록 이탈 가능성이 높아지므로, 고객의 실제 니즈에 맞는 최적화된 구독 패키지를 제안하는 것이 중요합니다.
+
+#### 3. 수익 모델 개선: 월 수익과 총 반복 요금이 낮을수록 이탈 가능성이 약간 높아지므로, 고객에게 더 많은 가치를 제공하면서 수익을 높일 수 있는 방안을 모색해야 합니다.
+
+#### 4. 사용량 기반 전략: 월간 사용 시간과 초과 사용 시간이 수익과 강한 상관관계를 보이므로, 사용량 기반의 개인에 맞는 맞품형 요금제나 프로모션을 고려해볼 수 있습니다.
+
+#### 5. 고객 제안 : 다양한 변수들 간의 상관관계를 바탕으로 고객을 세분화하여, 각 중요 특정에 맞는 맞춤형 서비스와 마케팅 전략을 수립할 수 있습니다.
+
+
+
 ### 한 줄 회고
 
-***회고 작성***
+김문수: EDA 분석을 했는데 생각만큼 이탈 상관분석 비율 이 나오지 않아 힘들었다. 그래도 풀젝은 끝나서 좋다.
