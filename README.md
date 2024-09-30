@@ -65,8 +65,7 @@
 #### 프로젝트 목표 
 - **고객이탈 데이터 분석**: 이탈한 고객들의 데이터를 분석하여 이탈 원인을 규명하고 고객 서비스 개선 방안을 도출합니다.
 - **ML/DL 모델 선정**: 여러 머신러닝 및 딥러닝 모델을 비교 분석하여 고객 이탈 예측에 가장 적합한 모델을 선정합니다.
-- **고객 세그먼테이션**: 수익, 사용량, 서비스 기간 등을 기준으로 고객을 세분화하고, 각 세그먼트에 맞는 맞춤형 고객 유지 전략을 수립합니다.
-- **서비스 개선 및 VIP 고객 관리**: 수익 또는 장기 고객의 이탈을 방지하기 위해, 맞춤형 혜택이나 VIP 서비스를 제안합니다.
+
 <hr>
 
 ### 🔨 기술 스택
@@ -82,19 +81,20 @@
 <hr>
 
 ### Prerequisites
-**이 프로젝트를 실행하기 위해 필요한 패키지 등을 정의**
-
-```cmd
-pip install -r requirements.txt
+```
+requirements.txt
 ```
 
 <hr>
 
 ### Usage
-**이 코드를 실행하기 위해 어떠한 코드를 어떻게 실행해야 하는지 작성**
-
+DL
 ```cmd
-python main.py
+python train.py
+```
+ML<br>
+```
+jupyter 에서 직접 실행
 ```
 
 <hr> 
@@ -164,22 +164,28 @@ python main.py
 
 ML : 분석결과 상관관계가 있는 특성들이 없기때문에 차원축소를 통해 특성 수를 줄이고 클러스터링을 통해 군집을 확인해봤지만 차원축소로는 해결하기 힘들다고 판단하게됨. 다음 시도로 svm의 비선형 커널(poly,rbf)를 이용하여 모델을 만들었고 결과가 이전 모델보다 향상되어 채택하게 됨.
 결과적으로 CustomerCareCalls, MonthsInService, DroppedCalls, OverageMinutes 네개의 특성이 이탈률과 연관이 있다고 판단됨.
+#### svc 모델 결과
+<br>
+<img src="https://github.com/user-attachments/assets/6e28b1f5-3d99-4dab-a5bd-7316bb25a219" width="600" height="150"/>
+<br> 
+<br><br>
 
 DL : 
 #### 가중치 보정 전
 <br>
-<img src="https://github.com/user-attachments/assets/e53a785e-db65-4f81-b2e5-a742cc568179" width="500" height="200"/>
+<img src="https://github.com/user-attachments/assets/e53a785e-db65-4f81-b2e5-a742cc568179" width="600" height="200"/>
 <br> 
 <br><br>
 
-#### 가중치 보정 후<br>
-<img src="https://github.com/user-attachments/assets/d4b6e927-41a4-4359-a7b8-549b3e332f92" width="500" height="200"/>
+#### 가중치 보정 후
+<br>
+<img src="https://github.com/user-attachments/assets/d4b6e927-41a4-4359-a7b8-549b3e332f92" width="600" height="200"/>
 <br> 
 
 <br><br>
 
 #### 가중치 보정 후 + 리니어 4개 <br>
-<img src="https://github.com/user-attachments/assets/ebbd51c1-b21f-4f4e-81bd-bda894b1690a" width="500" height="200"/>
+<img src="https://github.com/user-attachments/assets/ebbd51c1-b21f-4f4e-81bd-bda894b1690a" width="600" height="200"/>
 <br>
 <br> 
 <br>
@@ -188,10 +194,6 @@ DL :
 <hr>
 
 ### 수행 결과
-
-***modeling 결과 해석 및 결론 도출***
-
-<hr>
 
 <hr>
 
@@ -211,4 +213,8 @@ DL :
 
 ### 한 줄 회고
 
-김문수: EDA 분석을 했는데 생각만큼 이탈 상관분석 비율 이 나오지 않아 힘들었다. 그래도 풀젝은 끝나서 좋다.
+김문수 : EDA 분석을 했는데 생각만큼 이탈 상관분석 비율 이 나오지 않아 힘들었다. 그래도 풀젝은 끝나서 좋다.<br><br>
+이지수 : 평소에 어렵지 않은 데이터로 실습을 진행했는데 이번 프로젝트 때 경험하지 못한 어려운 데이터로 전처리하고 모델을 만드는 과정을 통해 많은 성장을 한 것 같다고 느꼈습니다.<br><br>
+김태욱 :모델을 수정해 predict 값을 수정해보려 했으나 계획대로 수행되지 않았다.
+이탈에 대한 자료가 비교적 많지 않아 학습이 제대로 이루어지지 않는 것으로 판단하여 가중치 보정을 통해 값을 늘렸지만 전보다 정확도가 떨어져 아쉽다. <br><br>
+안준용 : EDA 분석 및 readme 작성을 주로 했고 DL 모델링은 따로 해봤는데  실패하였고 의견취합에 어려움이 많았다. 더 공부하겠다.<br>
