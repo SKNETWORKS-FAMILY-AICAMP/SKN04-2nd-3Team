@@ -7,5 +7,5 @@
     "learning_rate": 1e-3,    
     "hidden_dim": 128,
     "dropout_ratio": 0.2,
-    "use_batch_norm": false
+    "use_batch_norm": true
 }
